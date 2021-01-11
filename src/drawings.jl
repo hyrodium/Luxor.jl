@@ -109,6 +109,7 @@ function Base.show(io::IO, ::MIME"text/plain", d::Drawing)
     # IJulia and Juno call the `show` function twice: once for
     # the image MIME and a second time for the text/plain MIME.
     # We check if this is such a 'second call':
+    println("adfawefwea")
     if (get(io, :jupyter, false) || Juno.isactive()) && (d.surfacetype == :svg || d.surfacetype == :png)
         return d.filename
     end
@@ -124,7 +125,8 @@ function Base.show(io::IO, ::MIME"text/plain", d::Drawing)
             cmd = get(ENV, "COMSPEC", "cmd")
             run(`$(ENV["COMSPEC"]) /c start $(returnvalue)`)
         elseif Sys.isunix()
-            run(`xdg-open $(returnvalue)`)
+            # run(`xdg-open $(returnvalue)`)
+            println("tried to open system viewer")
         end
     end
 end
