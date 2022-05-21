@@ -164,33 +164,33 @@ functions and they're listed in the (unexported) array
 function.
 
 
-|List of easing functions|
-|:---	                 |
-|easingflat|
-|lineartween|
-|easeinquad|
-|easeoutquad|
-|easeinoutquad|
-|easeincubic|
-|easeoutcubic|
-|easeinoutcubic|
-|easeinquart|
-|easeoutquart|
-|easeinoutquart|
-|easeinquint|
-|easeoutquint|
-|easeinoutquint|
-|easeinsine|
-|easeoutsine|
-|easeinoutsine|
-|easeinexpo|
-|easeoutexpo|
-|easeinoutexpo|
-|easeincirc|
-|easeoutcirc|
-|easeinoutcirc|
-|easeinoutinversequad|
-|easeinoutbezier|
+| List of easing functions |
+| :----------------------- |
+| `easingflat` |
+| `lineartween` |
+| `easeinquad` |
+| `easeoutquad` |
+| `easeinoutquad` |
+| `easeincubic` |
+| `easeoutcubic` |
+| `easeinoutcubic` |
+| `easeinquart` |
+| `easeoutquart` |
+| `easeinoutquart` |
+| `easeinquint` |
+| `easeoutquint` |
+| `easeinoutquint` |
+| `easeinsine` |
+| `easeoutsine` |
+| `easeinoutsine` |
+| `easeinexpo` |
+| `easeoutexpo` |
+| `easeinoutexpo` |
+| `easeincirc` |
+| `easeoutcirc` |
+| `easeinoutcirc` |
+| `easeinoutinversequad` |
+| `easeinoutbezier` |
 
 Most easing functions have names constructed like this:
 

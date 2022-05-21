@@ -1,8 +1,8 @@
 const Mesh = Cairo.CairoPattern
 
 """
-	add_mesh_patch(pattern::Mesh, bezierpath::BezierPath,
-		colors=Array{Colors.Colorant, 1})
+    add_mesh_patch(pattern::Mesh, bezierpath::BezierPath,
+        colors=Array{Colors.Colorant, 1})
 
 Add a new patch to the mesh pattern in `pattern`.
 
