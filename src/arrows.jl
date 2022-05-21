@@ -603,7 +603,7 @@ majorticks, minorticks = tickline(Point(0, 0), Point(100, 0), axis=false)
 Supply functions to make custom ticks. Custom tick functions
 should have arguments as follows:
 
-```
+```julia
 function mtick(n, pos;
         startnumber         = 0,
         finishnumber        = 1,
@@ -612,7 +612,7 @@ function mtick(n, pos;
 ```
 and
 
-```
+```julia
 function mntick(n, pos;
         startnumber        = 0,
         finishnumber       = 1,
@@ -621,9 +621,8 @@ function mntick(n, pos;
         ...
 ```
 
-For example:
-
-```
+# Example
+```julia
 tickline(O - (300, 0), Point(300, 0),
     startnumber  = -10,
     finishnumber = 10,

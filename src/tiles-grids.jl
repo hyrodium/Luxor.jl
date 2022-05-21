@@ -18,7 +18,7 @@ Tiler and Partition are similar:
 
 - Tiler lets you specify how many rows and columns of cells you want, and a margin:
 
-```
+```julia
 tiles = Tiler(1000, 800, 4, 5, margin=20)
 for (pos, n) in tiles
     # the point pos is the center of the tile
@@ -27,7 +27,7 @@ end
 
 You can access the calculated tile width and height like this:
 
-```
+```julia
 tiles = Tiler(1000, 800, 4, 5, margin=20)
 for (pos, n) in tiles
     ellipse(pos.x, pos.y, tiles.tilewidth, tiles.tileheight, :fill)
@@ -39,7 +39,7 @@ It's sometimes useful to know which row and column you're currently on.
 
 To use a Tiler to make grid points:
 
-```
+```julia
 first.(collect(Tiler(800, 800, 4, 4)))
 ```
 
@@ -131,12 +131,14 @@ For a column, set the `xspacing` to 0:
 
 To get points from the grid, use `nextgridpoint(g::Grid)`.
 
-    julia> grid = GridRect(O, 0, 40);
-    julia> nextgridpoint(grid)
-    Luxor.Point(0.0, 0.0)
+```julia
+julia> grid = GridRect(O, 0, 40);
+julia> nextgridpoint(grid)
+Luxor.Point(0.0, 0.0)
 
-    julia> nextgridpoint(grid)
-    Luxor.Point(0.0, 40.0)
+julia> nextgridpoint(grid)
+Luxor.Point(0.0, 40.0)
+```
 
 When you run out of grid points, you'll wrap round and start again.
 """
@@ -166,7 +168,9 @@ Define a hexagonal grid, to start at `startpoint` and proceed along the x-axis a
 then along the y-axis, `radius` is the radius of a circle that encloses each hexagon.
 The distance in `x` between the centers of successive hexagons is:
 
-``\\frac{\\sqrt{(3)} radius}{2}``
+```math
+\\frac{\\sqrt{3} \\cdot \\text{radius}}{2}
+```
 
 To get the next point from the grid, use `nextgridpoint(g::Grid)`.
 
@@ -261,23 +265,28 @@ Tiler and Partition are similar:
 
 - Tiler lets you specify how many rows and columns of cells you want, and a margin
 
-
-    tiles = Partition(1200, 1200, 30, 30)
-    for (pos, n) in tiles
-        # the point pos is the center of the tile
-    end
+```julia
+tiles = Partition(1200, 1200, 30, 30)
+for (pos, n) in tiles
+    # the point pos is the center of the tile
+end
+```
 
 You can access the calculated tile width and height like this:
 
-    tiles = Partition(1200, 1200, 30, 30)
-    for (pos, n) in tiles
-        ellipse(pos.x, pos.y, tiles.tilewidth, tiles.tileheight, :fill)
-    end
+```julia
+tiles = Partition(1200, 1200, 30, 30)
+for (pos, n) in tiles
+    ellipse(pos.x, pos.y, tiles.tilewidth, tiles.tileheight, :fill)
+end
+```
 
 It's sometimes useful to know which row and column you're currently on:
 
-    tiles.currentrow
-    tiles.currentcol
+```julia
+tiles.currentrow
+tiles.currentcol
+```
 
 should have that information for you.
 

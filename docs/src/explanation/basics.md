@@ -26,21 +26,21 @@ usually `:path`, ie. add the graphics to the current path.
 
 The main Julia data types you'll encounter in Luxor are:
 
-| Name of type      | Purpose |
-| ---               | ---     |
-| Drawing           | holds the current drawing |
-| Point             | specifies 2D points |
-| BoundingBox       | defines a bounding box |
-| Table             | defines a table with different column widths and row  heights |
-| Partition         | defines a table defined by cell width and height |
-| Tiler             | defines a rectangular grid of tiles |
-| BezierPathSegment | a Bezier path segment defined by 4 points |
-| BezierPath        | contains a series of BezierPathSegments |
-| GridRect          | defines a rectangular grid |
-| GridHex           | defines a hexagonal grid |
-| Scene             | used to define a scene for an animation |
-| Turtle            | represents a turtle for drawing turtle graphics |
-| Path              | contains a complete path |
+| Name of type        | Purpose |
+| :------------------ | :---    |
+| `Drawing`           | holds the current drawing |
+| `Point`             | specifies 2D points |
+| `BoundingBox`       | defines a bounding box |
+| `Table`             | defines a table with different column widths and row heights |
+| `Partition`         | defines a table defined by cell width and height |
+| `Tiler`             | defines a rectangular grid of tiles |
+| `BezierPathSegment` | a Bezier path segment defined by 4 points |
+| `BezierPath`        | contains a series of BezierPathSegments |
+| `GridRect`          | defines a rectangular grid |
+| `GridHex`           | defines a hexagonal grid |
+| `Scene`             | used to define a scene for an animation |
+| `Turtle`            | represents a turtle for drawing turtle graphics |
+| `Path`              | contains a complete path |
 
 ## Points and coordinates
 

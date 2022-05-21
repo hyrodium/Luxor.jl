@@ -22,7 +22,7 @@ so on), in response to the functions you call.
 This code creates a single path consisting of three separate
 shapes - a line, a rectangular box, and a circle:
 
-```
+```julia
 function make_path()
     move(Point(-220, 50))
     line(Point(-170, -50))
@@ -172,7 +172,7 @@ and `drawpath()` functions.
 
 Consider this code that uses `storepath()`:
 
-```julia
+```@example pathexample
 move(Point(-220, 50))
 line(Point(-170, -50))
 line(Point(-120, 50))
@@ -186,23 +186,8 @@ pathexample = storepath() # save Path
 
 `pathexample` now contains the path, stored in a Luxor object of type `Path`. The current path is still present.
 
-```
-julia> pathexample
-Path([
- PathMove(Point(-220.0, 50.0)),
- PathLine(Point(-170.0, -50.0)),
- PathLine(Point(-120.0, 50.0)),
- PathMove(Point(-50.0, 50.0)),
- PathLine(Point(-50.0, -50.0)),
- PathLine(Point(50.0, -50.0)),
- PathLine(Point(50.0, 50.0)),
- PathClose(),
- PathMove(Point(220.0, 0.0)),
- PathCurve(Point(220.0, 22.08984375), Point(202.08984375, 40.0), Point(180.0, 40.0)),
- PathCurve(Point(157.91015625, 40.0), Point(140.0, 22.08984375), Point(140.0, 0.0)),
- PathCurve(Point(140.0, -22.08984375), Point(157.91015625, -40.0), Point(180.0, -40.0)),
- PathCurve(Point(202.08984375, -40.0), Point(220.0, -22.08984375), Point(220.0, 0.0))
-])
+```@repl pathexample
+pathexample
 ```
 
 It's now possible to draw this stored path at a later time. For example, this code builds a path, saves it as `pathexample`, then draws a number of rotated copies:

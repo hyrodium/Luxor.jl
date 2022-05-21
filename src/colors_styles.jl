@@ -77,9 +77,10 @@ end
 """
 Set the current color to a string using a macro.
 
-For example:
-
-    setcolor"red"
+# Example
+```julia
+setcolor"red"
+```
 """
 macro setcolor_str(ex)
     isa(ex, String) || error("colorant requires literal strings")

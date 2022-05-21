@@ -725,7 +725,7 @@ The [`getpath`](@ref) function gets the current path as an array of elements, li
 
 Use the [`makebezierpath`](@ref) and [`drawbezierpath`](@ref) functions to make and draw Bézier paths, and [`pathtobezierpaths`](@ref) to convert the current path to an array of Bézier paths.  
 
-A BezierPath type contains a sequence of `BezierPathSegment`s; each curve segment is defined by four points: two end points and their control points.
+A `BezierPath` type contains a sequence of `BezierPathSegment`s; each curve segment is defined by four points: two end points and their control points.
 
 ```julia
     (Point(-129.904, 75.0),        # start point
@@ -837,7 +837,7 @@ nothing # hide
 ```
 ![path to polygon](../assets/figures/bezierpathtopoly.png)
 
-You can convert the current path to an array of BezierPaths using the [`pathtobezierpaths`](@ref) function.
+You can convert the current path to an array of `BezierPath`s using the [`pathtobezierpaths`](@ref) function.
 
 In the next example, the letter "a" is placed at the current position (set by [`move`](@ref)) and then converted to an array of Bézier paths. Each Bézier path is drawn first of all in gray, then the control points of segment are drawn (in orange) showing how they affect the curvature.
 

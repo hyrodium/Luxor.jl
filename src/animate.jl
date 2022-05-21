@@ -74,7 +74,7 @@ end
         easingfunction=easinoutquad,
         optarg=nothing)
 
-Use the Scene() constructor function to create a scene. Supply a movie, a function
+Use the `Scene()` constructor function to create a scene. Supply a movie, a function
 to generate the scene, and a range of frames. Optionally you can supply an
 easing function, and other information, in `optarg`, which can be accessed as
 `scene.opts`.

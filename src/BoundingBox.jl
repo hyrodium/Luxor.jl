@@ -8,7 +8,7 @@ function Base.show(io::IO, bbox::BoundingBox)
 end
 
 """
-`BoundingBox()` with no arguments returns a BoundingBox that
+`BoundingBox()` with no arguments returns a `BoundingBox` that
 includes the current drawing.
 
 The default `BoundingBox(;centered=true)` returns a
@@ -20,7 +20,7 @@ that the origin is at the top left of the drawing. So this
 function doesn't really work if the current matrix has been
 modified (by `translate()`, `scale()`, `rotate()` etc.)
 
-An instance of the BoundingBox type holds two Points,
+An instance of the `BoundingBox` type holds two Points,
 `corner1` and `corner2`.
 
 BoundingBox(;centered = true)   # the bounding box of the Drawing
@@ -71,7 +71,7 @@ end
 """
     BoundingBox(pointlist::Array)
 
-Return the BoundingBox of a polygon (array of points).
+Return the `BoundingBox` of a polygon (array of points).
 """
 function BoundingBox(pointlist::Array{Point,1})
     lowx, lowy = pointlist[1].x, pointlist[1].y
@@ -92,7 +92,7 @@ BoundingBox(pts::NTuple{2, Point}) = BoundingBox(pts...)
 """
     BoundingBox(str::AbstractString)
 
-Return a BoundingBox that just encloses a text string, given the current font
+Return a `BoundingBox` that just encloses a text string, given the current font
 selection. Uses the Toy text API (ie `text()` and `textextents()`).
 
 Text is assumed to be placed at the origin (`0/0`).
@@ -254,11 +254,9 @@ boxaspectratio(bb::BoundingBox = BoundingBox()) =
     boxheight(bb) / boxwidth(bb)
 
 """
-    convert(Point, bbox::BoundingBox)
-
-Convert a BoundingBox to a four-point clockwise polygon.
-
     convert(Vector{Point}, BoundingBox())
+
+Convert a `BoundingBox` to a four-point clockwise polygon.
 """
 function Base.convert(::Type{Vector{Point}}, bbox::BoundingBox)
     return [
@@ -300,7 +298,7 @@ box(bbox::BoundingBox, action::Symbol) =
 """
     poly(bbox::BoundingBox, :action; kwargs...)
 
-Make a polygon around the BoundingBox in `bbox`.
+Make a polygon around the `BoundingBox` in `bbox`.
 """
 poly(bbox::BoundingBox, action::Symbol = :none; kwargs...) =
     poly(convert(Vector{Point}, bbox), action; kwargs...)
@@ -308,7 +306,7 @@ poly(bbox::BoundingBox, action::Symbol = :none; kwargs...) =
 """
     prettypoly(bbox::BoundingBox, action; kwargs...)
 
-Make a decorated polygon around the BoundingBox in `bbox`. The vertices are in
+Make a decorated polygon around the `BoundingBox` in `bbox`. The vertices are in
 the order: bottom left, top left, top right, and bottom right.
 """
 prettypoly(bbox::BoundingBox, a::Symbol = :none;
@@ -356,7 +354,7 @@ boundingboxesintersect(bbox1::BoundingBox, bbox2::BoundingBox) =
 """
     intersectboundingboxes(bb1::BoundingBox, bb2::BoundingBox)
 
-Return a BoundingBox that's an intersection of the two bounding boxes.
+Return a `BoundingBox` that's an intersection of the two bounding boxes.
 """
 function intersectboundingboxes(bb1::BoundingBox, bb2::BoundingBox)
     !boundingboxesintersect(bb1, bb2) && return BoundingBox(O, O)
@@ -390,7 +388,7 @@ midpoint(bb::BoundingBox = BoundingBox()) = midpoint(bb...)
 """
     between(bb::BoundingBox, x)
 
-Find a point between the two corners of a BoundingBox corresponding to `x`,
+Find a point between the two corners of a `BoundingBox` corresponding to `x`,
 where `x` is typically between 0 and 1.
 """
 between(bb::BoundingBox, k = 0.5) = between(bb[1], bb[2], k)
@@ -398,7 +396,7 @@ between(bb::BoundingBox, k = 0.5) = between(bb[1], bb[2], k)
 """
     boxtopleft(bb::BoundingBox=BoundingBox())
 
-Return the point at the top left of the BoundingBox `bb`, defaulting to the drawing extent.
+Return the point at the top left of the `BoundingBox` `bb`, defaulting to the drawing extent.
 
 ```
 ■ ⋅ ⋅
@@ -412,7 +410,7 @@ boxtopleft(bb::BoundingBox = BoundingBox()) = bb[1]
 """
     boxtopcenter(bb::BoundingBox=BoundingBox())
 
-Return the point at the top center of the BoundingBox `bb`, defaulting to the drawing extent.
+Return the point at the top center of the `BoundingBox` `bb`, defaulting to the drawing extent.
 
 ```
 ⋅ ■ ⋅
@@ -427,7 +425,7 @@ boxtopcenter(bb::BoundingBox = BoundingBox()) =
 """
     boxtopright(bb::BoundingBox=BoundingBox())
 
-Return the point at the top right of the BoundingBox `bb`, defaulting to the drawing extent.
+Return the point at the top right of the `BoundingBox` `bb`, defaulting to the drawing extent.
 
 ```
 ⋅ ⋅ ■
@@ -442,7 +440,7 @@ boxtopright(bb::BoundingBox = BoundingBox()) =
 """
     boxmiddleleft(bb::BoundingBox=BoundingBox())
 
-Return the point at the middle left of the BoundingBox `bb`, defaulting to the drawing extent.
+Return the point at the middle left of the `BoundingBox` `bb`, defaulting to the drawing extent.
 
 ```
 ⋅ ⋅ ⋅
@@ -457,7 +455,7 @@ boxmiddleleft(bb::BoundingBox = BoundingBox()) =
 """
     boxmiddlecenter(bb::BoundingBox=BoundingBox())
 
-Return the point at the center of the BoundingBox `bb`, defaulting to the drawing extent.
+Return the point at the center of the `BoundingBox` `bb`, defaulting to the drawing extent.
 
 ```
 ⋅ ⋅ ⋅
@@ -471,7 +469,7 @@ boxmiddlecenter(bb::BoundingBox = BoundingBox()) =
 """
     boxmiddleright(bb::BoundingBox=BoundingBox())
 
-Return the point at the midde right of the BoundingBox `bb`, defaulting to the drawing extent.
+Return the point at the midde right of the `BoundingBox` `bb`, defaulting to the drawing extent.
 
 ```
 ⋅ ⋅ ⋅
@@ -485,7 +483,7 @@ boxmiddleright(bb::BoundingBox = BoundingBox()) =
 """
     boxbottomleft(bb::BoundingBox=BoundingBox())
 
-Return the point at the bottom left of the BoundingBox `bb`, defaulting to the drawing extent.
+Return the point at the bottom left of the `BoundingBox` `bb`, defaulting to the drawing extent.
 
 ```
 ⋅ ⋅ ⋅
@@ -499,7 +497,7 @@ boxbottomleft(bb::BoundingBox = BoundingBox()) =
 """
     boxbottomcenter(bb::BoundingBox=BoundingBox())
 
-Return the point at the bottom center of the BoundingBox `bb`, defaulting to the drawing extent.
+Return the point at the bottom center of the `BoundingBox` `bb`, defaulting to the drawing extent.
 
 ```
 ⋅ ⋅ ⋅
@@ -514,7 +512,7 @@ boxbottomcenter(bb::BoundingBox = BoundingBox()) =
 """
     boxbottomright(bb::BoundingBox=BoundingBox())
 
-Return the point at the bottom right of the BoundingBox `bb`, defaulting to the drawing extent.
+Return the point at the bottom right of the `BoundingBox` `bb`, defaulting to the drawing extent.
 
 ```
 ⋅ ⋅ ⋅

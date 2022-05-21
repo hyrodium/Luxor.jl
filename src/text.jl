@@ -133,17 +133,12 @@ end
 Return an array of six Float64s containing the measurements of the string `str`
 when set using the current font settings (Toy API):
 
-1 x_bearing
-
-2 y_bearing
-
-3 width
-
-4 height
-
-5 x_advance
-
-6 y_advance
+1. `x_bearing``
+2. `y_bearing``
+3. `width``
+4. `height``
+5. `x_advance``
+6. `y_advance``
 
 The x and y bearings are the displacement from the reference point to the
 upper-left corner of the bounding box. It is often zero or a small positive
@@ -699,13 +694,12 @@ If you don't supply a value for `leading`, the font's built-in extents are used.
 Text with no whitespace characters won't wrap. You can write a simple chunking function
 to split a string or array into chunks:
 
-```
+```julia
 chunk(x, n) = [x[i:min(i+n-1,length(x))] for i in 1:n:length(x)]
 ```
 
-For example:
-
-```
+# Example
+```julia
 textwrap(the_text, 300, boxtopleft(BoundingBox()) + 20,
     (ln, lt, sp, ht) -> begin
         c = count(t -> occursin(r"[[:punct:]]", t), split(lt, ""))

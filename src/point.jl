@@ -375,14 +375,16 @@ intersectionlinecircle(p1::Point, p2::Point, cpoint::Point, r) =
 """
     @polar (p)
 
-Convert a tuple of two numbers to a Point of x, y Cartesian coordinates.
+Convert a tuple of two numbers to a Point of `x,y` Cartesian coordinates.
 
-    @polar (10, pi/4)
-    @polar [10, pi/4]
-
+```julia
+@polar (10, pi/4)
+@polar [10, pi/4]
+```
 produces
-
-    Luxor.Point(7.0710678118654755, 7.071067811865475)
+```julia
+Luxor.Point(7.0710678118654755, 7.071067811865475)
+```
 """
 macro polar(p)
     quote

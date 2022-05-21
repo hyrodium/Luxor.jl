@@ -41,7 +41,7 @@ BezierPathSegment(a::Array{Point, 1}) =
 # end
 
 """
-BezierPath is an array of BezierPathSegments.
+`BezierPath` is an array of `BezierPathSegment`s.
 `segments` is `Vector{BezierPathSegment}`.
 """
 mutable struct BezierPath <: AbstractArray{BezierPathSegment, 1}
@@ -691,15 +691,13 @@ the two angles and constructs a BezierPathSegment that fits.
 See also the `bezierfrompoints()` function that makes a
 BezierPathSegment that passes through four points.
 
-### Example
-
-```
+# Example
+```julia
 drawbezierpath(beziersegmentangles(O, O + (100, 0),
     out = deg2rad(45),
     in  = 2π - deg2rad(45)),
     :stroke)
 ```
-
 """
 function beziersegmentangles(pt1, pt2;
         out = deg2rad(45),
@@ -729,8 +727,7 @@ introduced Bezier curves...).
 Returns a tuple of two BezierPathSegments, the 'lower' one
 (0 to `t`) followed by the 'higher' one (`t` to 1).
 
-## Example
-
+# Example
 ```julia
 bps = BezierPathSegment(ngon(O, 200, 4, vertices=true)...)
 l, h = splitbezier(bps::BezierPathSegment, 0.5)
@@ -748,10 +745,10 @@ julia> h
  Point(-1.4210854715202004e-14, -100.0)
  Point(99.99999999999999, -100.00000000000003)
  Point(200.0, -4.898587196589413e-14)
-```
 
-julia> l.p2 == h.p1
-true
+ julia> l.p2 == h.p1
+ true
+```
 """
 function splitbezier(bps::BezierPathSegment, t)
     p1, cp1, cp2, p2 = bps.p1, bps.cp1, bps.cp2, bps.p2

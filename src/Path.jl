@@ -103,11 +103,11 @@ drawpath(cpe::PathClose) = closepath()
     storepath()
 
 Obtain the current Cairo path and make a Luxor Path object,
-which is an array of PathElements.
+which is an array of `PathElement`s.
 
-Returns the Path object.
+Returns the `Path` object.
 
-See also getpath() and getpathflat().
+See also `getpath()` and `getpathflat()`.
 """
 function storepath()
     path = PathElement[]

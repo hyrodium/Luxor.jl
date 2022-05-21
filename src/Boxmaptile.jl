@@ -104,9 +104,10 @@ Build a box map of the values in `A` with one corner at `pt` and width `w` and
 height `h`. There are `length(A)` boxes. The areas of the boxes are proportional
 to the original values, scaled as necessary.
 
-The return value is an array of BoxmapTiles. For example:
+The return value is an array of BoxmapTiles.
 
-```
+# Example
+```julia
 [BoxmapTile(0.0, 0.0, 10.0, 20.0)
  BoxmapTile(10.0, 0.0, 10.0, 13.3333)
  BoxmapTile(10.0, 13.3333, 10.0, 6.66667)]
@@ -114,8 +115,6 @@ The return value is an array of BoxmapTiles. For example:
 
 with each tile containing `(x, y, w, h)`. `box()` and `BoundingBox()` can work with
 BoxmapTiles as well.
-
-# Example
 
 ```
 using Luxor
