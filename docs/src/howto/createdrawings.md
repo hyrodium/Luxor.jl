@@ -186,7 +186,7 @@ using Interact, Colors, Luxor
     circle(polar(110, deg2rad(h)), 10, :fill)
     sethue("black")
     label(string(h, "°"), deg2rad(h), polar(120, deg2rad(h)))
-        finish()
+    finish()
     d
 end
 ```

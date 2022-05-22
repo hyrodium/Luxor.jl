@@ -12,7 +12,7 @@ Random.seed!(42)
 function matrix_tests(fname)
     # matrix tests
 
-    # translate(dx, dy) =	transform([1,  0, 0,  1, dx, dy])                shift by
+    # translate(dx, dy) =   transform([1,  0, 0,  1, dx, dy])                shift by
     # scale(fx, fy)    =    transform([fx, 0, 0, fy,  0, 0])                 scale by
     # rotate(A)        =    transform([c, s, -c, c,   0, 0])                 rotate to A radians
     # x-skew(a)        =    transform([1,  0, tan(a), 1,   0, 0])            xskew by A
