@@ -63,6 +63,12 @@ jobs:
             using Pkg
             Pkg.develop(PackageSpec(path=pwd()))
             Pkg.instantiate()'
+      - name: Copy the fonts
+        - run: mkdir -p ~/.local/share/fonts
+        - run: ln -sf ~/.julia/packages/MathTeXEngine/*/assets/fonts/ComputerModern/cmex10.ttf ~/.local/share/fonts/
+        - run: ln -sf ~/.julia/packages/MathTeXEngine/*/assets/fonts/NewComputerModern/NewCM* ~/.local/share/fonts/
+      - name: Build font information caches
+        run: fc-cache -rv
       - run: |
           julia --project=docs -e '
             using Documenter: doctest
