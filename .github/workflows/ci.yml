@@ -66,6 +66,7 @@ jobs:
       - run: mkdir -p ~/.local/share/fonts
       - run: cp ~/.julia/packages/MathTeXEngine/*/assets/fonts/ComputerModern/cmex10.ttf ~/.local/share/fonts/
       - run: cp ~/.julia/packages/MathTeXEngine/*/assets/fonts/NewComputerModern/NewCM* ~/.local/share/fonts/
+      - run: ls ~/.local/share/fonts/
       - name: Build font information caches
         run: fc-cache -rv
       - run: |
