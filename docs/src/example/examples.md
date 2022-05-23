@@ -290,6 +290,8 @@ nothing # hide
 
 ![LaTeX](../assets/figures/latexequation.svg)
 
+``x``
+
 ## Triangulations
 
 This example shows how a Delaunay triangulation of a set of
