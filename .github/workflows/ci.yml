@@ -64,8 +64,8 @@ jobs:
             Pkg.develop(PackageSpec(path=pwd()))
             Pkg.instantiate()'
       - run: mkdir -p /usr/local/share/fonts/
-      - run: cp ~/.julia/packages/MathTeXEngine/*/assets/fonts/ComputerModern/*.ttf /usr/local/share/fonts/
-      - run: cp ~/.julia/packages/MathTeXEngine/*/assets/fonts/NewComputerModern/NewCM* /usr/local/share/fonts/
+      - run: sudo cp ~/.julia/packages/MathTeXEngine/*/assets/fonts/ComputerModern/*.ttf /usr/local/share/fonts/
+      - run: sudo cp ~/.julia/packages/MathTeXEngine/*/assets/fonts/NewComputerModern/NewCM* /usr/local/share/fonts/
       - run: ls /usr/local/share/fonts/
       - name: Build font information caches
         run: fc-cache -rv
